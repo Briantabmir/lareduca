@@ -34,7 +34,19 @@
                     <x-nav-link href="{{ route('assignment.submissions', ['assignmentId' => 1]) }}" :active="request()->routeIs('assignment.submissions')">
                         {{ __('Assignment Submissions') }}
                     </x-nav-link>
+                    
+                    <x-nav-link href="{{ route('enrollments') }}" :active="request()->routeIs('enrollments')">
+                        {{ __('Course Enrollments') }}
+                    </x-nav-link>
+                    @elseif(Auth::user()->role === 'student')
+                    <x-nav-link href="{{ route('enrollments') }}" :active="request()->routeIs('enrollments')">
+                        {{ __('Course Enrollments') }}
+                    </x-nav-link>
+                    <x-nav-link href="{{ route('games') }}" :active="request()->routeIs('games')">
+                        {{ __('Games') }}
+                    </x-nav-link>
                     @endif
+
                 </div>
             </div>
 
