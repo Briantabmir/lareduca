@@ -17,4 +17,9 @@ class Course extends Model
         "updated_at",
     ];
 
+    // public function assignments()
+    // {
+    //     return $this->hasMany(Assignment::class);
+    // }
+
 }

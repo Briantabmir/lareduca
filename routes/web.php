@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Livewire\CourseManagement;
+use App\Livewire\AssignmentsManagement;
+use App\LiveWire\AssignmentSubmissions;
+use App\Livewire\StudentProgressTracker;
+use App\Livewire\UserManagement;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,3 +22,7 @@ Route::middleware([
 });
 
 Route::get('/courses', CourseManagement::class)->name('courses');
+Route::get('/assignments', AssignmentsManagement::class)->name('assignments');
+Route::get('/assignments/{assignmentId}/submissions', AssignmentSubmissions::class)->name('assignment.submissions');
+Route::get('/progress/{courseId}', StudentProgressTracker::class)->name('progress');
+Route::get('/users', UserManagement::class)->name('users');

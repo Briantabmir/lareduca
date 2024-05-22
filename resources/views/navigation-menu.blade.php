@@ -15,6 +15,26 @@
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <!-- Courses -->
+                    <x-nav-link href="{{ route('courses') }}" :active="request()->routeIs('courses')">
+                        {{ __('Courses') }}
+                    </x-nav-link>
+                    <!-- Assignments -->
+                    <x-nav-link href="{{ route('assignments') }}" :active="request()->routeIs('assignments')">
+                        {{ __('Assignments') }}
+                    </x-nav-link>
+                    <!-- Users -->
+                    @if(Auth::user()->role === 'admin')
+                    <x-nav-link href="{{ route('users') }}" :active="request()->routeIs('users')">
+                        {{ __('Users') }}
+                    </x-nav-link>
+                    @endif
+                    <!-- Assignment Submissions -->
+                    @if(Auth::user()->role === 'admin' || Auth::user()->role === 'teacher')
+                    <x-nav-link href="{{ route('assignment.submissions', ['assignmentId' => 1]) }}" :active="request()->routeIs('assignment.submissions')">
+                        {{ __('Assignment Submissions') }}
+                    </x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -142,6 +162,14 @@
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            <!-- Courses -->
+            <x-responsive-nav-link href="{{ route('courses') }}" :active="request()->routeIs('courses')">
+                {{ __('Courses') }}
+            </x-responsive-nav-link>
+            <!-- Assignments -->
+            <x-responsive-nav-link href="{{ route('assignments') }}" :active="request()->routeIs('assignments')">
+                {{ __('Assignments') }}
+            </x-responsive-nav-link>        
         </div>
 
         <!-- Responsive Settings Options -->
