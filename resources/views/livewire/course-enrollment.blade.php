@@ -1,4 +1,4 @@
-<div class="min-h-screen flex items-center justify-center" style="background-image: url('{{ asset('images/Fondo.png') }}');">
+<div class="min-h-screen flex items-center justify-center">
         <div class="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg max-w-lg w-full">
             <form wire:submit.prevent="enroll" class="mb-6">
                 <label for="course" class="block text-gray-700 text-sm font-bold mb-2">Select a Course</label>

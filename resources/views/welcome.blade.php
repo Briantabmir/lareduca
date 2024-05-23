@@ -12,7 +12,7 @@
 </head>
 <body class="font-sans antialiased bg-gray-100 min-h-screen flex flex-col justify-between bg-cover bg-center" style="background-image: url('{{ asset('images/Fondo.png') }}');">
     <div class="flex-grow">
-        <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
+        <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3"z>
             <div class="flex lg:justify-center lg:col-start-2">
                 <img src="{{ asset('images/LogoBTM.png') }}" class="h-28 w-auto lg:h-52" alt="Logo">
             </div>
