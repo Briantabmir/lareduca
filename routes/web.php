@@ -9,6 +9,7 @@ use App\Livewire\StudentProgressTracker;
 use App\Livewire\UserManagement;
 use App\Livewire\CourseEnrollment;
 use App\Livewire\EducationalGamesIntegration;
+use App\Http\Controllers\EventController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -31,5 +32,6 @@ Route::get('/progress/{courseId}', StudentProgressTracker::class)->name('progres
 Route::get('/users', UserManagement::class)->name('users');
 Route::get('/enroll', CourseEnrollment::class)->name('enrollments');
 Route::get('/games', EducationalGamesIntegration::class)->name('games');
+Route::get('/events', [EventController::class, 'index']);
 
 
